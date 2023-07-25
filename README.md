@@ -1,12 +1,12 @@
-`tucp` is the command line client for the **TrueUnblended Control Plane** service [(tucpd)](https://github.com/mobingilabs/ouchan/tree/master/cloudrun/tucpd).
+`ops` is the command line client for the **Long Operations** service [(opsd)](https://github.com/mobingilabs/ouchan/tree/master/cloudrun/opsd).
 
 To install using [HomeBrew](https://brew.sh/), run the following command:
 
 ```bash
-$ brew install alphauslabs/tap/tucp
+$ brew install alphauslabs/tap/ops
 ```
 
-To setup authentication, set your `GOOGLE_APPLICATION_CREDENTIALS` env variable using your credentials file. You also need to give your credentials file access to the `tucpd-[next|prod]` service. To do so, try the following commands:
+To setup authentication, set your `GOOGLE_APPLICATION_CREDENTIALS` env variable using your credentials file. You also need to give your credentials file access to the `opsd-[next|prod]` service. To do so, try the following commands:
 
 ```bash
 # Install the `iam` tool:
@@ -16,13 +16,13 @@ $ brew install alphauslabs/tap/iam
 $ iam whoami
 
 # Request access to our `tucpd-[next|prod]` service (once only):
-$ iam allow-me tucpd-prod
+$ iam allow-me opsd-prod
 ```
 
 Explore more available subcommands and flags though:
 
 ```bash
-$ tucp -h
+$ ops -h
 # or
-$ tucp <subcmd> -h
+$ ops <subcmd> -h
 ```
