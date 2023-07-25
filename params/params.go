@@ -12,4 +12,5 @@ var (
 	RunEnv          string // dev, next, prod (default)
 	ServiceHost     string // auto-set
 	Bare            bool   // minimal log output, good for jq
+	OutFmt          string // json, csv, tabular, depending on cmd-level support
 )

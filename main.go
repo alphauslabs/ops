@@ -25,7 +25,7 @@ var (
 	rootCmd = &cobra.Command{
 		Use:   "ops",
 		Short: bold("ops") + " - Command line interface for opsd",
-		Long: bold("ops") + ` - Command line interface for our TrueUnblended Control Plane.
+		Long: bold("ops") + ` - Command line interface for our long operations service.
 Copyright (c) 2023-` + year() + ` Alphaus Cloud, Inc. All rights reserved.
 
 The general form is ` + bold("ops <resource[ subresource...]> <action> [flags]") + `.
@@ -86,8 +86,9 @@ func init() {
 	rootCmd.PersistentFlags().BoolVar(&params.Bare, "bare", params.Bare, "minimal log output")
 	rootCmd.PersistentFlags().StringVar(&params.CredentialsFile, "creds-file", "", "optional, GCP service account file")
 	rootCmd.PersistentFlags().StringVar(&params.RunEnv, "env", "prod", "dev, next, or prod")
+	rootCmd.PersistentFlags().StringVar(&params.OutFmt, "fmt", "", "json, csv (depending on support)")
 	rootCmd.AddCommand(
-		cmds.ListOpsCmd(),
+		cmds.ListCmd(),
 	)
 }
 
