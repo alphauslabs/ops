@@ -1,0 +1,34 @@
+builds:
+- id: "ops"
+  binary: ops
+  goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+checksum:
+  name_template: 'checksums.txt'
+dist: /tmp/ops/dist
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+release:
+  github:
+    owner: alphauslabs
+    name: ops
+brews:
+- tap:
+    owner: alphauslabs
+    name: homebrew-tap
+  name: ops
+  homepage: "https://github.com/alphauslabs/ops"
+  description: "The official command line interface for Alphaus long operations service."
+  folder: Formula
+  install: |
+    bin.install "ops"
+  test: |
+    assert_match /Command line interface for /, shell_output("#{bin}/ops -h", 0)
