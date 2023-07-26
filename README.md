@@ -15,7 +15,7 @@ $ brew install alphauslabs/tap/iam
 # Validate `iam` credentials:
 $ iam whoami
 
-# Request access to our `tucpd-[next|prod]` service (once only):
+# Request access to our `opsd-[next|prod]` service (once only):
 $ iam allow-me opsd-prod
 ```
 

@@ -47,7 +47,7 @@ func ListCmd() *cobra.Command {
 
 			stream, err := client.ListOperations(ctx, &req)
 			if err != nil {
-				logger.Errorf("ReadProcessQueues failed: %v", err)
+				logger.Errorf("ListOperations failed: %v", err)
 				return
 			}
 
