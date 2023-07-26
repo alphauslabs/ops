@@ -89,6 +89,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&params.OutFmt, "fmt", "", "json, csv (depending on support)")
 	rootCmd.AddCommand(
 		cmds.ListCmd(),
+		cmds.GetCmd(),
 	)
 }
 
