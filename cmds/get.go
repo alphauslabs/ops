@@ -61,12 +61,16 @@ func GetCmd() *cobra.Command {
 				}
 
 				logger.Infof("done: %v", resp.Done)
-				switch resp.Result.(type) {
-				case *protosinternal.Operation_Response:
-					logger.Infof("result: ok")
-				case *protosinternal.Operation_Error:
-					err := resp.Result.(*protosinternal.Operation_Error)
-					logger.Infof("result: %q", err.Error.Message)
+				if resp.Done {
+					switch resp.Result.(type) {
+					case *protosinternal.Operation_Response:
+						logger.Infof("result: ok")
+					case *protosinternal.Operation_Error:
+						err := resp.Result.(*protosinternal.Operation_Error)
+						logger.Infof("result: %q", err.Error.Message)
+					}
+				} else {
+					logger.Infof("result:")
 				}
 			}
 		},
