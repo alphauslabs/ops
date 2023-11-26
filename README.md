@@ -1,3 +1,5 @@
+[![main](https://github.com/alphauslabs/ops/actions/workflows/main.yml/badge.svg)](https://github.com/alphauslabs/ops/actions/workflows/main.yml)
+
 `ops` is the command line client for the **Long Operations** service [(opsd)](https://github.com/mobingilabs/ouchan/tree/master/cloudrun/opsd).
 
 To install using [HomeBrew](https://brew.sh/), run the following command:
